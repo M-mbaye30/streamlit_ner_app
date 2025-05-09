@@ -1,0 +1,20 @@
+# Environnements virtuels
+streamlit_appENV/
+venv/
+env/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# Grands fichiers binaires
+*.bin
+vectors
+variables.*
