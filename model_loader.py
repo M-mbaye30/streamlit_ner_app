@@ -7,12 +7,18 @@ import json
 # Structure de configuration pour les modèles disponibles
 MODELS_CONFIG = {
     "BiLSTM-CRF": {
+<<<<<<< HEAD
         "model_dir": r"streamlit_ner_app\BiLSTM-CRF_Model",
         "mappings_file": "bilstm_crf_mappings.pkl",
+=======
+        "model_dir": r"BiLSTM-CRF_Model",
+        "mappings_file": "streamlit_ner_app\bilstm_crf_mappings.pkl",
+>>>>>>> 8eff807635cd60456a7ee970390437bcebd3c283
         "custom_objects": {"CRF": CRF, "ModelWithCRFLoss": ModelWithCRFLoss},
         "processor_type": "bilstm_crf"
     },
     "GLiNER": {
+<<<<<<< HEAD
         "model_dir": r"Gliner_Small_Model",
         "mappings_file": None,  
         "custom_objects": {},  
@@ -21,6 +27,16 @@ MODELS_CONFIG = {
     "en_core_sci_lg": {
         "model_dir": r"sci_lg_ner_model",  
         "mappings_file": None,  
+=======
+        "model_dir": r"streamlit_ner_app\Gliner_Small_Model",
+        "mappings_file": None,  # GLiNER n'utilise pas de mappings classiques
+        "custom_objects": {},  # Pas d'objets personnalisés TensorFlow
+        "processor_type": "gliner"
+    },
+    "en_core_sci_lg": {
+        "model_dir": r"streamlit_ner_app\sci_lg_ner_model",  # Nom du modèle SciSpaCy 
+        "mappings_file": None,  # SciSpaCy n'utilise pas de mappings personnalisés
+>>>>>>> 8eff807635cd60456a7ee970390437bcebd3c283
         "custom_objects": {},
         "processor_type": "scispacy"
     }
