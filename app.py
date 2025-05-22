@@ -1,7 +1,5 @@
 # Importer les bibliothèques nécessaires
 import streamlit as st
-st.set_option('server.runOnSave', False)
-st.set_option('server.fileWatcherType', 'none')
 import tensorflow as tf
 import numpy as np
 import time 
