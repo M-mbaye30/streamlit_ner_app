@@ -7,7 +7,6 @@ scikit-learn==1.6.1
 tensorflow==2.15.0
 tensorflow-addons==0.22.0
 keras==2.15.0
-torch
 
 # NLP Tools
 spacy==3.7.4
