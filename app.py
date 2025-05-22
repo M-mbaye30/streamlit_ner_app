@@ -8,6 +8,7 @@ import io
 from collections import Counter 
 import streamlit as st
 # st.set_option('server.runOnSave', False)
+os.environ['TORCH_CLASSES_PATH'] = '.'
 
 # Importer les fonctions des autres modules
 from model_loader import load_mappings, load_ner_model, get_available_models
