@@ -7,19 +7,19 @@ import json
 # Structure de configuration pour les modèles disponibles
 MODELS_CONFIG = {
     "BiLSTM-CRF": {
-        "model_dir": r"C:\Users\mouha\OneDrive\Bureau\streamlit_ner_app\BiLSTM-CRF_Model",
+        "model_dir": r"BiLSTM-CRF_Model",
         "mappings_file": "bilstm_crf_mappings.pkl",
         "custom_objects": {"CRF": CRF, "ModelWithCRFLoss": ModelWithCRFLoss},
         "processor_type": "bilstm_crf"
     },
     "GLiNER": {
-        "model_dir": r"C:\Users\mouha\OneDrive\Bureau\streamlit_ner_app\Gliner_Small_Model",
+        "model_dir": r"Gliner_Small_Model",
         "mappings_file": None,  # GLiNER n'utilise pas de mappings classiques
         "custom_objects": {},  # Pas d'objets personnalisés TensorFlow
         "processor_type": "gliner"
     },
     "en_core_sci_lg": {
-        "model_dir": r"C:\Users\mouha\OneDrive\Bureau\streamlit_ner_app\sci_lg_ner_model",  # Nom du modèle SciSpaCy 
+        "model_dir": r"sci_lg_ner_model",  # Nom du modèle SciSpaCy 
         "mappings_file": None,  # SciSpaCy n'utilise pas de mappings personnalisés
         "custom_objects": {},
         "processor_type": "scispacy"
