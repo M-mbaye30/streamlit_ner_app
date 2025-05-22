@@ -3,40 +3,25 @@ import pickle
 import tensorflow as tf
 from tf2crf import CRF, ModelWithCRFLoss
 import json
+import sys
 
 # Structure de configuration pour les modèles disponibles
 MODELS_CONFIG = {
     "BiLSTM-CRF": {
-<<<<<<< HEAD
-        "model_dir": r"streamlit_ner_app\BiLSTM-CRF_Model",
-        "mappings_file": "bilstm_crf_mappings.pkl",
-=======
         "model_dir": r"BiLSTM-CRF_Model",
-        "mappings_file": "streamlit_ner_app\bilstm_crf_mappings.pkl",
->>>>>>> 8eff807635cd60456a7ee970390437bcebd3c283
+        "mappings_file": "bilstm_crf_mappings.pkl",
         "custom_objects": {"CRF": CRF, "ModelWithCRFLoss": ModelWithCRFLoss},
         "processor_type": "bilstm_crf"
     },
     "GLiNER": {
-<<<<<<< HEAD
         "model_dir": r"Gliner_Small_Model",
-        "mappings_file": None,  
-        "custom_objects": {},  
-        "processor_type": "gliner"
-    },
-    "en_core_sci_lg": {
-        "model_dir": r"sci_lg_ner_model",  
-        "mappings_file": None,  
-=======
-        "model_dir": r"streamlit_ner_app\Gliner_Small_Model",
         "mappings_file": None,  # GLiNER n'utilise pas de mappings classiques
         "custom_objects": {},  # Pas d'objets personnalisés TensorFlow
         "processor_type": "gliner"
     },
     "en_core_sci_lg": {
-        "model_dir": r"streamlit_ner_app\sci_lg_ner_model",  # Nom du modèle SciSpaCy 
+        "model_dir": r"sci_lg_ner_model",  # Nom du modèle SciSpaCy 
         "mappings_file": None,  # SciSpaCy n'utilise pas de mappings personnalisés
->>>>>>> 8eff807635cd60456a7ee970390437bcebd3c283
         "custom_objects": {},
         "processor_type": "scispacy"
     }
@@ -104,7 +89,14 @@ def load_ner_model(model_name):
         # Cas spécial pour GLiNER
         if config["processor_type"] == "gliner":
             from gliner import GLiNER
-            model = GLiNER.from_pretrained(model_path)
+            # Modification pour éviter l'erreur torch::class_
+            os.environ['TORCH_CLASSES_PATH'] = '.'  # Définir un chemin explicite
+            try:
+                # Essayer d'abord avec l'option use_torchscript=False
+                model = GLiNER.from_pretrained(model_path, use_torchscript=False)
+            except TypeError:
+                # Si l'option n'est pas supportée, utiliser l'appel standard
+                model = GLiNER.from_pretrained(model_path)
             print(f"Modèle GLiNER chargé avec succès depuis {model_path}")
             return model
             
