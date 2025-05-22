@@ -5,8 +5,9 @@ scikit-learn==1.6.1
 
 # Deep Learning Frameworks
 tensorflow==2.15.0
-tensorflow-addons==0.22.0
+tensorflow-addons==0.20.0
 keras==2.15.0
+torch==1.13.1
 
 # NLP Tools
 spacy==3.7.4
