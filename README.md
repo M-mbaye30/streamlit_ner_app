@@ -4,7 +4,7 @@ Une application web interactive de reconnaissance d'entités nommées (NER) cons
 
 ## 📋 Description
 
-Cette application permet d'identifier et d'extraire automatiquement des entités nommées (personnes, lieux, organisations, etc.) à partir de textes en utilisant des modèles de traitement automatique du langage naturel.
+Cette application permet d'identifier et d'extraire automatiquement des entités nommées (gene, allele, etc.) à partir de textes en utilisant des modèles de traitement automatique du langage naturel.
 
 ## ✨ Fonctionnalités
 
