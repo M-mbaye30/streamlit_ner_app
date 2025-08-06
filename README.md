@@ -17,9 +17,9 @@ Cette application permet d'identifier et d'extraire automatiquement des entités
 
 - **Python 3.9**
 - **Streamlit** - Interface web
-- **spaCy** ou **Transformers** - Modèles NLP
+- **spaCy** et **Transformers** - Modèles NLP
 - **Pandas** - Manipulation de données
-- **Plotly/Matplotlib** - Visualisations (si applicable)
+- **Plotly/Matplotlib** - Visualisations
 - **Pytorch...**
 
 ##  Installation
